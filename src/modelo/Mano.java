@@ -41,8 +41,18 @@ public class Mano extends Mazo {
 		return "Mano [" + cartas + "] Valor de la mano:"+valorMano();
 	}
 
-
-	
-	
+	public void pedirCarta(Mazo baraja) 
+			throws NoHayMasCartasException, Masde21Exception, 
+			HayBlackjackException {
+		// Recoge la carta que se encuentra en el principio del Mazo
+		Carta c = baraja.solicitarCarta();
+		this.cartas.add(c);
+		if (valorMano()>21) {
+			throw new Masde21Exception();
+		}
+		if (valorMano()==21) {
+			throw new HayBlackjackException();
+		}
+	}
 	
 }

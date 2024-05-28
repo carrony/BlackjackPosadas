@@ -43,4 +43,8 @@ public class Mazo {
 		return c;
 	}
 
+		
+	
+	
+	
 }
